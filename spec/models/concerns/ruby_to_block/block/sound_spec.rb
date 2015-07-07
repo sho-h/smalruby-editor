@@ -7,6 +7,7 @@ require_relative 'shared/block_examples'
 describe RubyToBlock::Block, '音ジャンル', to_blocks: true do
   parts = <<-EOS
 car1.on(:start) do
+  self.volume = 100
   play(name: "piano_do.wav")
 end
 car1.play(name: "piano_do.wav")
@@ -21,12 +22,21 @@ car1.play(name: "piano_do.wav")
     <statement name="DO">
       <block type="events_on_start">
         <statement name="DO">
-          <block type="sound_play" inline="true">
-            <value name="NAME">
-              <block type="sound_preset_sounds">
-                <field name="NAME">piano_do.wav</field>
+          <block type="sound_set_volume" inline="true">
+            <value name="VOLUME">
+              <block type="math_number">
+                <field name="NUM">100</field>
               </block>
             </value>
+            <next>
+              <block type="sound_play" inline="true">
+                <value name="NAME">
+                  <block type="sound_preset_sounds">
+                    <field name="NAME">piano_do.wav</field>
+                  </block>
+                </value>
+              </block>
+            </next>
           </block>
         </statement>
         <next>
