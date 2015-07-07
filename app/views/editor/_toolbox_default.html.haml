@@ -272,6 +272,10 @@
     -# すべての音を止める
     -#%block{:type => "#{category}_stop"}
 
+    -# 音量を()%にする
+    %block{:type => "#{category}_set_volume"}
+      = toolbox_number_value('VOLUME', 100)
+
     -# 変数:ボリューム
     -#%block{:type => "#{category}_volume"}
 

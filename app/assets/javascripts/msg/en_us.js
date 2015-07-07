@@ -205,6 +205,7 @@ Blockly.Msg.BLOCKS_SOUND_PRESET_SOUNDS_PIANO_RA = 'A of piano';
 Blockly.Msg.BLOCKS_SOUND_PRESET_SOUNDS_PIANO_SI = 'B of piano';
 Blockly.Msg.BLOCKS_SOUND_PRESET_SOUNDS_PIANO_DO_2 = 'High C of piano';
 Blockly.Msg.BLOCKS_SOUND_PLAY = 'play sound %1';
+Blockly.Msg.BLOCKS_SOUND_SET_VOLUME = 'set volume to %1 ％';
 
 
 // blocks/looks.js.coffee.erb
