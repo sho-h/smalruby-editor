@@ -90,7 +90,7 @@ Blockly.Blocks['<%= n %>'] =
   init: ()->
     @setHelpUrl('')
     @setColour(<%= color %>)
-    @appendDummyInput().appendField('ボリューム')
+    @appendDummyInput().appendField(<%= bm(".volume") %>)
     @setOutput(true, 'Number')
     @setTooltip('')
 

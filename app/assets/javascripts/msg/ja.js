@@ -210,6 +210,7 @@ Blockly.Msg.BLOCKS_SOUND_PRESET_SOUNDS_PIANO_SI = 'ピアノのシ';
 Blockly.Msg.BLOCKS_SOUND_PRESET_SOUNDS_PIANO_DO_2 = 'ピアノの高いド';
 Blockly.Msg.BLOCKS_SOUND_PLAY = '♪%1 の音を鳴らす';
 Blockly.Msg.BLOCKS_SOUND_SET_VOLUME = '♪音量を %1 ％にする';
+Blockly.Msg.BLOCKS_SOUND_VOLUME = '♪音量';
 
 
 // blocks/looks.js.coffee.erb
