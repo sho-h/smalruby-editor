@@ -66,7 +66,6 @@ Blockly.Blocks['<%= n %>'] =
 Blockly.Ruby['<%= n %>'] = (block) ->
   'stop\n'
 
-# 音量を()%にする
 <% n = "#{category}_set_volume" %>
 Blockly.Blocks['<%= n %>'] =
   init: ()->
@@ -84,7 +83,6 @@ Blockly.Ruby['<%= n %>'] = (block) ->
   volume = Blockly.Ruby.valueToCode(@, 'VOLUME', Blockly.Ruby.ORDER_NONE) || '100'
   Blockly.Ruby.characterSetVariable_('volume', volume)
 
-# 変数:ボリューム
 <% n = "#{category}_volume" %>
 Blockly.Blocks['<%= n %>'] =
   init: ()->

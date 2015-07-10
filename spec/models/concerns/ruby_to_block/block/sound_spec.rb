@@ -9,8 +9,11 @@ describe RubyToBlock::Block, '音ジャンル', to_blocks: true do
 car1.on(:start) do
   self.volume = 100
   play(name: "piano_do.wav")
+  p(volume)
 end
 car1.play(name: "piano_do.wav")
+car1.volume = 100
+p(car1.volume)
   EOS
   describe compact_source_code(parts), character_new_data: true do
     _parts = parts
@@ -35,6 +38,13 @@ car1.play(name: "piano_do.wav")
                     <field name="NAME">piano_do.wav</field>
                   </block>
                 </value>
+                <next>
+                  <block type="ruby_p" inline="true">
+                    <value name="ARG">
+                      <block type="sound_volume" />
+                    </value>
+                  </block>
+                </next>
               </block>
             </next>
           </block>
@@ -46,6 +56,24 @@ car1.play(name: "piano_do.wav")
                 <field name="NAME">piano_do.wav</field>
               </block>
             </value>
+            <next>
+              <block type="sound_set_volume" inline="true">
+                <value name="VOLUME">
+                  <block type="math_number">
+                    <field name="NUM">100</field>
+                  </block>
+                </value>
+                <next>
+                  <block type="ruby_p" inline="true">
+                    <value name="ARG">
+                      <block type="ruby_expression">
+                        <field name="EXP">car1.volume</field>
+                      </block>
+                    </value>
+                  </block>
+                </next>
+              </block>
+            </next>
           </block>
         </next>
       </block>

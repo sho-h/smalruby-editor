@@ -2,7 +2,10 @@
 module RubyToBlock
   module Block
     class SoundSetVolume < CharacterMethodCall
-      blocknize '^\s*' + CHAR_RE + 'volume\s*=\s*(\S+)\s*$',
+      blocknize ['^\s*',
+                 CHAR_RE,
+                 'volume\s*=\s*(\S+)',
+                 '\s*$'].join(''),
                 statement: true, inline: true
 
       def self.process_match_data(md, context)
