@@ -313,3 +313,4 @@ Blockly.Msg.BLOCKS_OPERATORS_FALSE = 'false';
 Blockly.Msg.BLOCKS_PEN_DOWN_PEN = 'pen down';
 Blockly.Msg.BLOCKS_PEN_UP_PEN = 'pen up';
 Blockly.Msg.BLOCKS_PEN_SET_PEN_COLOR = 'set pen color to %1';
+Blockly.Msg.BLOCKS_PEN_CHANGE_PEN_COLOR_BY = 'change pen color by %1';
