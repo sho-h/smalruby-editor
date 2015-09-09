@@ -290,6 +290,10 @@
     %block{:type => "#{category}_change_pen_color_by"}
           = toolbox_number_value('HUE', 10)
 
+    -# ペンの濃さを( )ずつ変える
+    %block{:type => "#{category}_change_pen_shade_by"}
+          = toolbox_number_value('SHADE', 10)
+
   %category{name: tt('.data'), custom: 'VARIABLE'}
 
   - category = 'events'
