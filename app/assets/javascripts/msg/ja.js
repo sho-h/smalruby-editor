@@ -317,7 +317,9 @@ Blockly.Msg.BLOCKS_PEN_DOWN_PEN = '●ペンを下ろす';
 Blockly.Msg.BLOCKS_PEN_UP_PEN = '●ペンを上げる';
 Blockly.Msg.BLOCKS_PEN_SET_PEN_COLOR = '●ペンの色を%1にする';
 Blockly.Msg.BLOCKS_PEN_CHANGE_PEN_COLOR_BY = '●ペンの色を%1ずつ変える';
+Blockly.Msg.BLOCKS_PEN_SET_PEN_COLOR_TO = '●ペンの色を%1にする';
 Blockly.Msg.BLOCKS_PEN_CHANGE_PEN_SHADE_BY = '●ペンの濃さを%1ずつ変える';
+Blockly.Msg.BLOCKS_PEN_SET_PEN_SHADE_TO = '●ペンの濃さを%1にする';
 
 
 // override blockly's messages
