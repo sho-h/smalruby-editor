@@ -48,7 +48,7 @@ Blockly.Ruby['<%= n %>'] = (block) ->
   blue = parseInt(c[5..6], 16)
   Blockly.Ruby.characterSetVariable_('pen_color', "[#{red}, #{green}, #{blue}]")
 
-# ペンの色を( )ずつ変える
+# Change pen color by (  )
 <% n = "#{category}_change_pen_color_by" %>
 Blockly.Blocks['<%= n %>'] =
   init: ()->
@@ -66,7 +66,7 @@ Blockly.Ruby['<%= n %>'] = (block) ->
   arg = Blockly.Ruby.valueToCode(@, 'HUE', Blockly.Ruby.ORDER_NONE) || '0'
   Blockly.Ruby.characterMethodCall_('change_pen_color_by', "#{arg}")
 
-# ペンの色を( )にする
+# Set pen Color to (  )
 <% n = "#{category}_set_pen_color_to" %>
 Blockly.Blocks['<%= n %>'] =
   init: ()->
@@ -82,27 +82,9 @@ Blockly.Blocks['<%= n %>'] =
 
 Blockly.Ruby['<%= n %>'] = (block) ->
   arg = Blockly.Ruby.valueToCode(@, 'HUE', Blockly.Ruby.ORDER_NONE) || '0'
-  Blockly.Ruby.characterMethodCall_('set_pen_color_to', "#{arg}")
+  Blockly.Ruby.characterSetVariable_('pen_color', "#{arg}")
 
-# ペンの濃さを( )ずつ変える
-<% n = "#{category}_change_pen_shade_by" %>
-Blockly.Blocks['<%= n %>'] =
-  init: ()->
-    @setHelpUrl('')
-    @setColour(<%= color %>)
-    @interpolateMsg(<%= bm('.change_pen_shade_by') %>,
-                    ['SHADE', ['Number'], Blockly.ALIGN_RIGHT],
-                    Blockly.ALIGN_RIGHT)
-    @setInputsInline(true)
-    @setPreviousStatement(true)
-    @setNextStatement(true)
-    @setTooltip('')
-
-Blockly.Ruby['<%= n %>'] = (block) ->
-  arg = Blockly.Ruby.valueToCode(@, 'SHADE', Blockly.Ruby.ORDER_NONE) || '0'
-  Blockly.Ruby.characterMethodCall_('change_pen_shade_by', "#{arg}")
-
-# ペンの濃さを( )にする
+# Set pen shade to (  )
 <% n = "#{category}_set_pen_shade_to" %>
 Blockly.Blocks['<%= n %>'] =
   init: ()->
@@ -118,4 +100,4 @@ Blockly.Blocks['<%= n %>'] =
 
 Blockly.Ruby['<%= n %>'] = (block) ->
   arg = Blockly.Ruby.valueToCode(@, 'SHADE', Blockly.Ruby.ORDER_NONE) || '0'
-  Blockly.Ruby.characterMethodCall_('set_pen_shade_to', "#{arg}")
+  Blockly.Ruby.characterSetVariable_('pen_shade', "#{arg}")
