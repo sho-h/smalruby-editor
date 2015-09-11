@@ -277,6 +277,9 @@
 
   - category = 'pen'
   %category{:name => tt('.pen')}
+    -# clear
+    %block{:type => "#{category}_clear"}
+
     -# ペンを下ろす
     %block{:type => "#{category}_down_pen"}
 

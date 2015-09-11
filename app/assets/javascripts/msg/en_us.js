@@ -310,6 +310,7 @@ Blockly.Msg.BLOCKS_OPERATORS_FALSE = 'false';
 
 
 // blocks/pen.js.coffee.erb
+Blockly.Msg.BLOCKS_PEN_CLEAR = 'clear';
 Blockly.Msg.BLOCKS_PEN_DOWN_PEN = 'pen down';
 Blockly.Msg.BLOCKS_PEN_UP_PEN = 'pen up';
 Blockly.Msg.BLOCKS_PEN_SET_PEN_COLOR = 'set pen color to %1';
