@@ -286,6 +286,10 @@
     -# ペンの色を[カラー]にする
     %block{:type => "#{category}_set_pen_color"}
 
+    -# ペンの色を( )ずつ変える
+    %block{:type => "#{category}_change_pen_color_by"}
+      = toolbox_number_value('HUE', 10)
+
     -# ペンの色を( )にする
     %block{:type => "#{category}_set_pen_color_to"}
       = toolbox_number_value('HUE', 10)
