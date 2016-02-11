@@ -66,13 +66,29 @@ Blockly.Blocks['<%= n %>'] =
 Blockly.Ruby['<%= n %>'] = (block) ->
   'stop\n'
 
-# 変数:ボリューム
+<% n = "#{category}_set_volume" %>
+Blockly.Blocks['<%= n %>'] =
+  init: ()->
+    @setHelpUrl('')
+    @setColour(<%= color %>)
+    @interpolateMsg(<%= bm('.set_volume') %>,
+                    ['VOLUME', ['Number'], Blockly.ALIGN_RIGHT]
+                    Blockly.ALIGN_RIGHT)
+    @setInputsInline(true)
+    @setPreviousStatement(true)
+    @setNextStatement(true)
+    @setTooltip('')
+
+Blockly.Ruby['<%= n %>'] = (block) ->
+  volume = Blockly.Ruby.valueToCode(@, 'VOLUME', Blockly.Ruby.ORDER_NONE) || '100'
+  Blockly.Ruby.characterSetVariable_('volume', volume)
+
 <% n = "#{category}_volume" %>
 Blockly.Blocks['<%= n %>'] =
   init: ()->
     @setHelpUrl('')
     @setColour(<%= color %>)
-    @appendDummyInput().appendField('ボリューム')
+    @appendDummyInput().appendField(<%= bm(".volume") %>)
     @setOutput(true, 'Number')
     @setTooltip('')
 
