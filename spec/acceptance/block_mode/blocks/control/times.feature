@@ -105,8 +105,11 @@
     ならば テキストエディタのプログラムは以下であること:
     """
     require "smalruby"
+
     変数１ = 5
+
     (変数１ - 1).times do
       p self
     end
+
     """
