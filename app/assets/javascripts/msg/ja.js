@@ -315,6 +315,7 @@ Blockly.Msg.BLOCKS_OPERATORS_FALSE = '偽';
 
 
 // blocks/pen.js.coffee.erb
+Blockly.Msg.BLOCKS_PEN_CLEAR = '●消す';
 Blockly.Msg.BLOCKS_PEN_DOWN_PEN = '●ペンを下ろす';
 Blockly.Msg.BLOCKS_PEN_UP_PEN = '●ペンを上げる';
 Blockly.Msg.BLOCKS_PEN_SET_PEN_COLOR = '●ペンの色を%1にする';

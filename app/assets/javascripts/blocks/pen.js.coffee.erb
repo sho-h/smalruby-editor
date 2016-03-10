@@ -7,6 +7,21 @@
   color = SmalrubyEditor::COLORS[category.to_sym]
 %>
 
+# clear
+<% n = "#{category}_clear" %>
+Blockly.Blocks['<%= n %>'] =
+  init: ()->
+    @setHelpUrl('')
+    @setColour(<%= color %>)
+    @appendDummyInput()
+      .appendField(<%= bm(".clear") %>)
+    @setPreviousStatement(true)
+    @setNextStatement(true)
+    @setTooltip('')
+
+Blockly.Ruby['<%= n %>'] = (block) ->
+  Blockly.Ruby.characterMethodCall_('clear')
+
 # ペンを下ろす
 # ペンを上げる
 # <%
