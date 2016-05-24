@@ -2,6 +2,7 @@
 
 require 'tempfile'
 require 'open3'
+require 'shellwords'
 require 'nkf'
 require 'digest/sha2'
 require 'bundler'
@@ -150,13 +151,13 @@ class SourceCode < ActiveRecord::Base
     tempfile.close
 
     Bundler.with_clean_env do
-      Open3.capture3("#{ruby_cmd} -c #{path}")
+      Open3.capture3("#{Shellwords.shellescape(ruby_cmd)} -c #{Shellwords.shellescape(path)}")
     end
   end
 
   def open3_capture3_run_program(path, env)
     Bundler.with_clean_env do
-      Open3.capture3(env, "#{ruby_cmd} #{path}")
+      Open3.capture3(env, "#{Shellwords.shellescape(ruby_cmd)} #{Shellwords.shellescape(path)}")
     end
   end
 
