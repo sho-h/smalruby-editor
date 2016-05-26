@@ -137,11 +137,12 @@ class SourceCode < ActiveRecord::Base
 
   def ruby_cmd
     if SmalrubyEditor.osx?
-      Pathname(Gem.bin_path('rsdl', 'rsdl'))
+      cmd = Pathname(Gem.bin_path('rsdl', 'rsdl'))
     else
-      Pathname(RbConfig::CONFIG['RUBY_INSTALL_NAME'])
+      cmd = Pathname(RbConfig::CONFIG['RUBY_INSTALL_NAME'])
         .expand_path(RbConfig::CONFIG['bindir'])
     end
+    Shellwords.shellescape(cmd)
   end
 
   def open3_capture3_ruby_c
@@ -151,13 +152,13 @@ class SourceCode < ActiveRecord::Base
     tempfile.close
 
     Bundler.with_clean_env do
-      Open3.capture3("#{Shellwords.shellescape(ruby_cmd)} -c #{Shellwords.shellescape(path)}")
+      Open3.capture3("#{ruby_cmd} -c #{Shellwords.shellescape(path)}")
     end
   end
 
   def open3_capture3_run_program(path, env)
     Bundler.with_clean_env do
-      Open3.capture3(env, "#{Shellwords.shellescape(ruby_cmd)} #{Shellwords.shellescape(path)}")
+      Open3.capture3(env, "#{ruby_cmd} #{Shellwords.shellescape(path)}")
     end
   end
 
